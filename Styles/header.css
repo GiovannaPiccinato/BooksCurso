@@ -4,7 +4,7 @@
 	background-image: url("../imagens/Menu.svg");
 	background-repeat: no-repeat;
 	background-position: center;
-	display: inline-block; 
+	display: inline-block;
 }
 
 .cabeçalho {
@@ -32,7 +32,7 @@
 	width: 60vw;
 }
 
-.container_botao:checked~.lista_menu { 
+.container_botao:checked~.lista_menu {
 	/* vai verificar se está checked o checkbox, o ~ faz o serviço de verificar qual é a proxima classe que deve ser chamada quando o checkbox estiver selecionado */
 	display: block;
 }
@@ -49,13 +49,64 @@
 }
 
 .lista_menu_link {
-    background: var(--azul-degrade);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    text-transform: uppercase;
+	background: var(--azul-degrade);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-clip: text;
+	text-transform: uppercase;
 }
 
 .container_botao {
 	display: none;
+}
+
+.container_titulo,
+.opcoes {
+	display: none;
+}
+
+@media screen and (min-width: 1024px) {
+
+	.container_titulo,
+	.container_titulo_negrito {
+		font-family: var(--fonte-secundaria);
+		font-size: 30px;
+	}
+
+	.container_titulo {
+		font-weight: 400;
+		display: block;
+	}
+
+	.container_titulo_negrito {
+		font-weight: 700;
+	}
+
+	.opcoes {
+		display: flex;
+	}
+
+	.opcoes_item {
+		padding: 0 1em;
+		text-transform: uppercase;
+	}
+
+	.opcoes_link {
+		color: var(--preto);
+		text-decoration: none;
+	}
+
+	.container_imagem_transparente,
+	.cabeçalho_menu_hamburguer {
+		display: none;
+	}
+
+	.opcoes_botao:checked~.lista_menu {
+		display: block;
+		width: auto;
+	}
+
+	.opcoes_botao {
+		display: none;
+	}
 }
